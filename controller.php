@@ -2,6 +2,9 @@
 // Include the model (database) class
 require_once 'model.php';
 
+function clean_input($input) {
+    return htmlspecialchars(trim($input));
+
 class Controller
 {
     private $dbObject;
