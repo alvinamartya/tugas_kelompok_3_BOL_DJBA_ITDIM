@@ -50,6 +50,20 @@ class database{
         $query = "UPDATE barang SET NamaBarang='$NamaBarang', stok='$stok', harga='$harga' WHERE IdBarang='$IdBarang'";
         $this->connection->query($query);
     }
+     function login($username, $password){
+        // Lakukan validasi
+        if ($username === "user" && $password === "password") {
+            // Login berhasil
+            $_SESSION["IdAkses"] = "1";
+
+            // Halaman setelah login sukses (index.php)
+            header("Location: index.php");
+            exit();
+        } else {
+            // Login gagal
+            echo "Login gagal. Periksa kembali username dan password.";
+        }
+    }
 }
 ?>
 
