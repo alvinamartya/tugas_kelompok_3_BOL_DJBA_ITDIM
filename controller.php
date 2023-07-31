@@ -42,4 +42,16 @@ class Controller
         $this->dbObject->update($IdBarang, $NamaBarang, $stok, $harga);
     }
 }
+
+$controller = new Controller();
+
+// Jika ada data POST dari form login
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Ambil data dari form login
+    $uname = clean_input($_POST["uname"]);
+    $pass = clean_input($_POST["pass"]);
+
+    // Panggil fungsi login dari Controller
+    $controller->login($unam, $pass);
+}
 ?>
